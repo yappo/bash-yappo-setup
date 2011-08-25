@@ -11,7 +11,7 @@ cd $workdir
 
 # copy files
 for path in `ls -a`; do
-    if [ $path = "setup.sh" -o $path = "." -o $path = ".." -o $path = ".git" ]; then
+    if [ $path = "setup.sh" -o $path = "." -o $path = ".." -o $path = ".git" -o $path = ".gitignore" ]; then
 	continue;
     fi
 
