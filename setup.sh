@@ -3,7 +3,8 @@
 
 # download
 cd /tmp
-tmpname=`head -n 10 /dev/random | strings | perl -e 'my $str; while(<>){$str.=$_}$str =~ s/\W//g; $str =~ s/^(.{,32}).*$/$1/; print $str'`
+#tmpname=`head -n 10 /dev/random | strings | perl -e 'my $str; while(<>){$str.=$_}$str =~ s/\W//g; $str =~ s/^(.{,32}).*$/$1/; print $str'`
+tmpname='bash-yappo-setup.sh'
 echo $tmpname
 git clone git://github.com/yappo/bash-yappo-setup.git $tmpname
 cd $tmpname
