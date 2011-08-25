@@ -1,4 +1,5 @@
 #!/bin/sh
+# curl -L https://raw.github.com/yappo/bash-yappo-setup/master/setup.sh | bash
 
 # download
 cd /tmp
