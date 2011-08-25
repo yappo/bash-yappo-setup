@@ -1,0 +1,14 @@
+[alias]
+        co = checkout
+        nco = checkout -b
+        br = branch
+        st = status
+        ci = commit
+        di = diff
+        ll = log --summary --stat
+        mer = merge
+        dmer = merge --no-commit
+        tree = log --graph --pretty=oneline --abbrev-commit --decorate
+[user]
+        name = Kazuhiro Osawa
+        email = 
