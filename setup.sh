@@ -11,7 +11,7 @@ cd $tmpname
 
 # copy files
 for path in `ls -a`; do
-    if [ $path = "setup.sh" -o $path = "." -o $path = ".." ]; then
+    if [ $path = "setup.sh" -o $path = "." -o $path = ".." -o $path = ".git" ]; then
 	continue;
     fi
 
