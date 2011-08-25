@@ -1,6 +1,5 @@
 #!/bin/sh
 
-home=$HOME
 for path in `ls -a`; do
     if [ $path = "setup.sh" -o $path = "." -o $path = ".." ]; then
 	continue;
