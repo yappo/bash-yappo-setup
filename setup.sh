@@ -22,3 +22,9 @@ touch "$HOME/.emacs.d/conf/init-siteconf.el"
 
 echo "export EDITOR=vim" >> "$HOME/.bashrc"
 
+# perlbrew
+if [ -e "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+    echo "source $HOME/perl5/perlbrew/etc/bashrc" >> "$HOME/.bashrc"
+elif [ -e "$HOME/perl5/etc/bashrc" ]; then
+    echo "source $HOME/perl5/etc/bashrc" >> "$HOME/.bashrc"
+fi
