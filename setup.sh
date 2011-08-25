@@ -28,14 +28,29 @@ done
 # finalize
 touch "$HOME/.emacs.d/conf/init-siteconf.el"
 
-echo "export EDITOR=vim" >> "$HOME/.bashrc"
+cat <<EOF >> "$HOME/.bashrc"
+export EDITOR=vim
 
 # perlbrew
 if [ -e "$HOME/perl5/perlbrew/etc/bashrc" ]; then
-    echo "source $HOME/perl5/perlbrew/etc/bashrc" >> "$HOME/.bashrc"
+    source $HOME/perl5/perlbrew/etc/bashrc"
 elif [ -e "$HOME/perl5/etc/bashrc" ]; then
-    echo "source $HOME/perl5/etc/bashrc" >> "$HOME/.bashrc"
+    source $HOME/perl5/etc/bashrc"
 fi
+
+# git completaion
+if [ -r "$HOME/.bash_completion.d/git" ]; then # = git-completion.bash
+  source "$HOME/.bash_completion.d/git"
+  PS1="[\H:\$(__git_ps1 \"%s)\")\w]\\$ "
+else
+  PS1="[\H:\w]\\$ "
+fi
+
+if [ -e "$HOME/.bashsiterc" ]; then
+    source "$HOME/.bashsiterc"
+fi
+EOF
+
 
 # cleanup
 cd /tmp
