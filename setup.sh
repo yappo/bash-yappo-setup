@@ -2,12 +2,12 @@
 # curl -L https://raw.github.com/yappo/bash-yappo-setup/master/setup.sh | bash
 
 # download
-cd /tmp
+cd $HOME
 #tmpname=`head -n 10 /dev/random | strings | perl -e 'my $str; while(<>){$str.=$_}$str =~ s/\W//g; $str =~ s/^(.{,32}).*$/$1/; print $str'`
-tmpname='bash-yappo-setup.sh'
-echo $tmpname
-git clone git://github.com/yappo/bash-yappo-setup.git $tmpname
-cd $tmpname
+workdir="$HOME/yappo-dotfiles"
+echo $workdir
+git clone git://github.com/yappo/bash-yappo-setup.git $workdir
+cd $workdir
 
 # copy files
 for path in `ls -a`; do
@@ -16,6 +16,7 @@ for path in `ls -a`; do
     fi
 
     echo $path
+    from="$workdir/$path"
     to="$HOME/$path"
     backup="$to.original"
     if [ -e $to ]; then
@@ -23,7 +24,7 @@ for path in `ls -a`; do
 	mv $to $backup
     fi
 
-    cp -fr $path $to
+    ln -s $from $to
 done
 
 # finalize
@@ -51,8 +52,3 @@ if [ -e "$HOME/.bashsiterc" ]; then
     source "$HOME/.bashsiterc"
 fi
 EOF
-
-
-# cleanup
-cd /tmp
-rm -fr $tmpname
