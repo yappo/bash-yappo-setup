@@ -43,9 +43,9 @@ fi
 # git completaion
 if [ -r "$HOME/.bash_completion.d/git" ]; then # = git-completion.bash
   source "$HOME/.bash_completion.d/git"
-  PS1="[\H:\\$(__git_ps1 \"%s)\")\w]\\$ "
+  PS1="[\H:\\\$(__git_ps1 \"%s)\")\w]\\\$ "
 else
-  PS1="[\H:\w]\\$ "
+  PS1="[\H:\w]\\\$ "
 fi
 
 if [ -e "$HOME/.bashsiterc" ]; then
