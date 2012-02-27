@@ -33,6 +33,9 @@ touch "$HOME/.emacs.d/conf/init-siteconf.el"
 cat <<EOF >> "$HOME/.bashrc"
 export EDITOR=vim
 
+# aliases
+alias gpush="make test && git push"
+
 # perlbrew
 if [ -e "$HOME/perl5/perlbrew/etc/bashrc" ]; then
     source $HOME/perl5/perlbrew/etc/bashrc"
