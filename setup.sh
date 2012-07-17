@@ -38,9 +38,9 @@ alias gpush="make test && git push"
 
 # perlbrew
 if [ -e "$HOME/perl5/perlbrew/etc/bashrc" ]; then
-    source $HOME/perl5/perlbrew/etc/bashrc"
+    source "$HOME/perl5/perlbrew/etc/bashrc"
 elif [ -e "$HOME/perl5/etc/bashrc" ]; then
-    source $HOME/perl5/etc/bashrc"
+    source "$HOME/perl5/etc/bashrc"
 fi
 
 # git completaion
